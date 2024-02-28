@@ -93,7 +93,9 @@ const UsersList = ({ initialDogs }) => {
     try {
       const [dogResponse, shibeResponse] = await Promise.all([
         fetch('https://dog.ceo/api/breeds/image/random/5'),
-        fetch('http://shibe.online/api/shibes?count=5&urls=true&httpsUrls=true')
+        fetch(
+          'https://shibe.online/api/shibes?count=5&urls=true&httpsUrls=true'
+        )
       ])
       const [dogData, shibeData] = await Promise.all([
         dogResponse.json(),
